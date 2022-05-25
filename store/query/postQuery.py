@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .keyManage import postkeys
 from store.models import Store
 def postQuery(postdict:dict):
@@ -8,6 +8,6 @@ def postQuery(postdict:dict):
             category=str(postdict['category'][0]),
             subcategory=str(postdict['subcategory'][0]),
             amount=int(postdict['amount'][0]))
-        print(instance)
-
-    return HttpResponse("Post")
+        return JsonResponse({"200":"Success"},safe=False)
+    else:
+        return JsonResponse({"400":"Bad Request"},status=400)
