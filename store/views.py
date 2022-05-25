@@ -13,7 +13,6 @@ def index(req):
 @csrf_exempt
 def store(request):
     if request.method == "POST":
-        print(request.POST)
         return postQuery(dict(request.GET))
     elif request.method == "GET":
         return getQuery(dict(request.GET))
