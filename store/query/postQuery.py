@@ -1,4 +1,4 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import  JsonResponse
 from .keyManage import postkeys
 from store.models import Store
 def postQuery(postdict:dict):
